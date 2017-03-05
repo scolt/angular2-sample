@@ -1,0 +1,15 @@
+@import '../../../styles/variables';
+
+.breadcrumbs {
+  margin-left: 20px;
+  a {
+    color: $gray-font-color;
+    text-decoration: none;
+    border: 1px solid $gray-font-color;
+    padding: 5px 10px;
+  }
+
+  span + span:before {
+    content: '>';
+  }
+}

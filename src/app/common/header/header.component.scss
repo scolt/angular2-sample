@@ -1,0 +1,34 @@
+@import '../../../styles/variables';
+
+
+.left-menu img {
+  width: 70px;
+  height: 70px;
+}
+
+header {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: $main-black;
+  color: $gray-font-color;
+}
+
+.left-menu {
+  display: flex;
+  align-items: center;
+}
+
+
+.right-menu {
+  > * {
+    display: block;
+    text-align: right;
+  }
+  a {
+    color: $main-white;
+  }
+}
