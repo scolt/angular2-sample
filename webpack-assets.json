@@ -1,0 +1,12 @@
+{
+  "vendor": {
+    "js": "/angular2-sample/vendor.34a8c2657378f4bab9ba.bundle.js"
+  },
+  "main": {
+    "js": "/angular2-sample/main.7c05714fe20c37ea5126.bundle.js",
+    "css": "/angular2-sample/main.c42fccc20f7331feb5cc06853e21390d.css"
+  },
+  "polyfills": {
+    "js": "/angular2-sample/polyfills.fb54e7782e9d2fb94d48.bundle.js"
+  }
+}
