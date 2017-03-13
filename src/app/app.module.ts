@@ -34,6 +34,7 @@ import { BreadcrumbsComponent } from './common/breadcrumbs/breadcrumbs.component
 
 import { SearchComponent } from './pages/cources/search/search.component';
 import { CourceComponent } from './pages/cources/cource/cource.component';
+import { DeleteCourseComponent } from './pages/cources/cource/delete/delete.course.component';
 import { AddCourceButtonComponent } from './pages/cources/addNewOne/addNewOne.component';
 
 import '../styles/styles.scss';
@@ -68,7 +69,8 @@ type StoreType = {
 
     SearchComponent,
     AddCourceButtonComponent,
-    CourceComponent
+    CourceComponent,
+    DeleteCourseComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

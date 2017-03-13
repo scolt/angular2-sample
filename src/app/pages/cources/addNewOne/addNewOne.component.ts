@@ -3,7 +3,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'add-new-cources',
+  selector: 'add-new-courses',
   styleUrls: [ './addNewOne.component.scss' ],
   templateUrl: './addNewOne.component.html'
 })

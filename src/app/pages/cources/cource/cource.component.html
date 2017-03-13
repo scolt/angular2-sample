@@ -1,14 +1,14 @@
 <article class="cource">
 	<div class="content">
 		<header>
-			<h2>{{cource.title}}</h2>
-			<span class="duration">{{cource.duration}}</span>
-			<span class="date">{{cource.date}}</span>
+			<h2>{{course.title}}</h2>
+			<span class="duration">{{course.duration}}</span>
+			<span class="date">{{course.date}}</span>
 		</header>
-		<p>{{cource.content}}</p>
+		<p>{{course.content}}</p>
 	</div>
 	<div class="actions">
 		<a href="">Edit Cource</a>
-		<a href="">Delete Cource</a>
+		<delete-course (deleteCourse)="handleDeleteClick()"></delete-course>
 	</div>
 </article>

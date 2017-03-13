@@ -3,7 +3,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'search-cources',
+  selector: 'search-courses',
   styleUrls: [ './search.component.scss' ],
   templateUrl: './search.component.html'
 })
