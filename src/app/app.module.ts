@@ -27,6 +27,7 @@ import { VexModalModule } from 'angular2-modal/plugins/vex';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './pages/home';
+import { LoginComponent } from './pages/login';
 import { CourcesComponent } from './pages/courses';
 import { NoContentComponent } from './pages/no-content';
 
@@ -40,6 +41,7 @@ import { DeleteCourseComponent } from './pages/courses/course/delete/delete.cour
 import { AddCourceButtonComponent } from './pages/courses/addNewOne/addNewOne.component';
 
 import { CoursesService } from './pages/courses/cources.service';
+import { LoginService } from './pages/login/login.service';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -64,6 +66,7 @@ type StoreType = {
   declarations: [
     AppComponent,
     HomeComponent,
+    LoginComponent,
     CourcesComponent,
     NoContentComponent,
 
@@ -87,7 +90,8 @@ type StoreType = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    CoursesService
+    CoursesService,
+    LoginService
   ]
 })
 export class AppModule {

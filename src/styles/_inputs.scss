@@ -1,0 +1,36 @@
+input {
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  padding: .625rem;
+  border: 0;
+  border-bottom: 1px solid $main-black;
+  transition: border-color ease-out .25s;
+
+  &.error {
+    border-color: red;
+  }
+
+  &:last-child {
+    margin: 0
+  }
+
+  &:focus {
+    border-color: $nav-button-color;
+  }
+}
+
+.input-error {
+  top: 100%;
+  right: 0;
+  padding-left: 5px;
+  margin-top: -10px;
+  background: #fff;
+  color: red;
+  position: absolute;
+}
+
+.input-wrapper {
+  margin-bottom: 20px;
+  position: relative;
+}

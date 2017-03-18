@@ -3,11 +3,12 @@
 		<a [routerLink]="['./']">
 			<img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/book-bookmark-icon.png">
 		</a>
-		<breadcrumbs></breadcrumbs>
+		<breadcrumbs *ngIf="!isLightUI"></breadcrumbs>
 	</div>
-	<div class="right-menu">
-		<span class="username">Viktar Parashchanka</span>
-		<a href="#">Logoff</a>
+	<div class="right-menu" *ngIf="!isLightUI">
+    <a [routerLink]="['./login']" *ngIf="!isAuthenticatedUser">Login</a>
+		<span class="username" *ngIf="isAuthenticatedUser">{{userInfo.name}}</span>
+		<a *ngIf="isAuthenticatedUser" (click)="logoff()">Logoff</a>
 	</div>
-</header> 
+</header>
 
