@@ -18,9 +18,7 @@ export class LoginService {
     result: false
   });
 
-  constructor(private router: Router) {
-    console.log(router);
-  }
+  constructor(private router: Router) {}
 
   public login(creds: ICreds): void {
     localStorage.setItem(TOKEN_KEY_NAME, 'token');
