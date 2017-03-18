@@ -22,6 +22,8 @@ import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
+import { ModalModule } from 'angular2-modal';
+import { VexModalModule } from 'angular2-modal/plugins/vex';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './pages/home';
@@ -36,6 +38,8 @@ import { SearchComponent } from './pages/courses/search/search.component';
 import { CourceComponent } from './pages/courses/course/course.component';
 import { DeleteCourseComponent } from './pages/courses/course/delete/delete.course.component';
 import { AddCourceButtonComponent } from './pages/courses/addNewOne/addNewOne.component';
+
+import { CoursesService } from './pages/courses/cources.service';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -76,11 +80,14 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    ModalModule.forRoot(),
+    VexModalModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    CoursesService
   ]
 })
 export class AppModule {

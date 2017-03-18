@@ -22,6 +22,7 @@ import { AppState } from './app.service';
       <router-outlet></router-outlet>
     </main>
     <main-footer></main-footer>
+    <span defaultOverlayTarget></span>
   `
 })
 export class AppComponent implements OnInit {
