@@ -9,7 +9,7 @@ import {
   template: `<span class="black-button" (click)="clicked()">Delete Course</span>`
 })
 export class DeleteCourseComponent {
-  @Output() public deleteCourse = new EventEmitter();
+  @Output() deleteCourse = new EventEmitter();
 
   public clicked(): void {
     this.deleteCourse.emit();

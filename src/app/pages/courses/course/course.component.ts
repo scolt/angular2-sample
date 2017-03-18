@@ -16,7 +16,7 @@ export interface ICourse {
   templateUrl: 'course.component.html'
 })
 export class CourceComponent {
-  @Input() public course: ICourse;
+  @Input() course: ICourse;
 
   public handleDeleteClick() {
     console.log('Try to delete');
