@@ -8,4 +8,5 @@ import {
   templateUrl: './search.component.html'
 })
 export class SearchComponent {
+  public query: string = '';
 }

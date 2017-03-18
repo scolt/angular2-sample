@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home';
-import { CourcesComponent } from './pages/cources';
+import { CourcesComponent } from './pages/courses';
 import { NoContentComponent } from './pages/no-content';
 
 import { DataResolver } from './app.resolver';

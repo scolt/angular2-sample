@@ -25,17 +25,17 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './pages/home';
-import { CourcesComponent } from './pages/cources';
+import { CourcesComponent } from './pages/courses';
 import { NoContentComponent } from './pages/no-content';
 
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { BreadcrumbsComponent } from './common/breadcrumbs/breadcrumbs.component';
 
-import { SearchComponent } from './pages/cources/search/search.component';
-import { CourceComponent } from './pages/cources/cource/cource.component';
-import { DeleteCourseComponent } from './pages/cources/cource/delete/delete.course.component';
-import { AddCourceButtonComponent } from './pages/cources/addNewOne/addNewOne.component';
+import { SearchComponent } from './pages/courses/search/search.component';
+import { CourceComponent } from './pages/courses/course/course.component';
+import { DeleteCourseComponent } from './pages/courses/course/delete/delete.course.component';
+import { AddCourceButtonComponent } from './pages/courses/addNewOne/addNewOne.component';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';

@@ -3,13 +3,13 @@ import {
   OnInit
 } from '@angular/core';
 
-import { ICourse } from './cource/cource.component';
+import { ICourse } from './course/course.component';
 
 @Component({
   selector: 'cources',
   providers: [],
-  styleUrls: ['./cources.component.scss'],
-  templateUrl: './cources.component.html'
+  styleUrls: ['courses.component.scss'],
+  templateUrl: 'courses.component.html'
 })
 export class CourcesComponent implements OnInit {
   public courses: ICourse[] = [];

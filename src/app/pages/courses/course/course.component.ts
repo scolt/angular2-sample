@@ -12,8 +12,8 @@ export interface ICourse {
 
 @Component({
   selector: 'cource',
-  styleUrls: [ './cource.component.scss' ],
-  templateUrl: './cource.component.html'
+  styleUrls: [ 'course.component.scss' ],
+  templateUrl: 'course.component.html'
 })
 export class CourceComponent {
   @Input() public course: ICourse;
