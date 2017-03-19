@@ -1,11 +1,11 @@
 {
   "main": {
-    "js": "/angular2-sample/main.bundle.js"
+    "js": "main.bundle.js"
   },
   "vendor": {
     "js": "/angular2-sample/vendor.bundle.js"
   },
   "polyfills": {
-    "js": "/angular2-sample/polyfills.bundle.js"
+    "js": "polyfills.bundle.js"
   }
 }

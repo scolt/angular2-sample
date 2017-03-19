@@ -109,11 +109,10 @@ var LoginService = (function () {
             err: '',
             result: false
         });
-        console.log(router);
     }
     LoginService.prototype.login = function (creds) {
         localStorage.setItem(TOKEN_KEY_NAME, 'token');
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/courses');
         this.authenticatedResult.next({
             err: '',
             result: true,
