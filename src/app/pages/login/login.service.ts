@@ -22,7 +22,7 @@ export class LoginService {
 
   public login(creds: ICreds): void {
     localStorage.setItem(TOKEN_KEY_NAME, 'token');
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/courses');
     this.authenticatedResult.next({
       err: '',
       result: true,

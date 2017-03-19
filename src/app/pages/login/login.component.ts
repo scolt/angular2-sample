@@ -23,9 +23,7 @@ export class LoginComponent {
 
   error: string;
 
-  constructor(public loginService: LoginService) {
-
-  }
+  constructor(public loginService: LoginService) {}
 
   onSubmit(): void {
     this.loginService.login(this.model);
