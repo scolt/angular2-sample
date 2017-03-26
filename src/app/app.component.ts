@@ -4,7 +4,8 @@
 import {
   Component,
   OnInit,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { AppState } from './app.service';
 
@@ -15,6 +16,7 @@ import { AppState } from './app.service';
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: [],
   template: `
     <main-header></main-header>
@@ -23,6 +25,7 @@ import { AppState } from './app.service';
     </main>
     <main-footer></main-footer>
     <span defaultOverlayTarget></span>
+    <loader></loader>
   `
 })
 export class AppComponent implements OnInit {

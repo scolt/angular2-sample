@@ -1,8 +1,10 @@
 import {
-  Component
+  Component,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { LoginService } from './login.service';
+import { LoaderService } from '../../common/components/loaderBlock/loaderBlock.service';
 
 export interface ICreds {
   username: string;
@@ -12,6 +14,7 @@ export interface ICreds {
 @Component({
   selector: 'login',
   providers: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: [ './login.component.scss' ],
   templateUrl: './login.component.html'
 })
@@ -23,9 +26,13 @@ export class LoginComponent {
 
   error: string;
 
-  constructor(public loginService: LoginService) {}
+  constructor(public loginService: LoginService, public loaderService: LoaderService) {}
 
   onSubmit(): void {
-    this.loginService.login(this.model);
+    this.loaderService.show();
+    setTimeout(() => {
+      this.loginService.login(this.model);
+      this.loaderService.hide();
+    }, 3000);
   };
 }

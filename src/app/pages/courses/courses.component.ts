@@ -1,6 +1,8 @@
 import {
   Component,
-  OnInit
+  ChangeDetectorRef,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { ICourse } from './course/course.component';
@@ -9,17 +11,19 @@ import { CoursesService } from './cources.service';
 @Component({
   selector: 'cources',
   providers: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['courses.component.scss'],
   templateUrl: 'courses.component.html'
 })
 export class CourcesComponent implements OnInit {
   public courses: ICourse[] = [];
 
-  constructor(public coursesService: CoursesService) {}
+  constructor(public coursesService: CoursesService, private cd: ChangeDetectorRef) {}
 
   public ngOnInit() {
     this.coursesService.courses.subscribe((courses: ICourse[]) => {
       this.courses = courses;
+      this.cd.markForCheck();
     });
     this.coursesService.getList();
   }

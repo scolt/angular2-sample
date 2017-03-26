@@ -5,6 +5,7 @@
 		</a>
 		<breadcrumbs *ngIf="!isLightUI"></breadcrumbs>
 	</div>
+
 	<div class="right-menu" *ngIf="!isLightUI">
     <a [routerLink]="['./login']" *ngIf="!isAuthenticatedUser">Login</a>
 		<span class="username" *ngIf="isAuthenticatedUser">{{userInfo.name}}</span>

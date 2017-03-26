@@ -31,9 +31,10 @@ import { LoginComponent } from './pages/login';
 import { CourcesComponent } from './pages/courses';
 import { NoContentComponent } from './pages/no-content';
 
-import { HeaderComponent } from './common/header/header.component';
-import { FooterComponent } from './common/footer/footer.component';
-import { BreadcrumbsComponent } from './common/breadcrumbs/breadcrumbs.component';
+import { HeaderComponent } from './common/components/header/header.component';
+import { FooterComponent } from './common/components/footer/footer.component';
+import { BreadcrumbsComponent } from './common/components/breadcrumbs/breadcrumbs.component';
+import { LoaderBlockComponent } from './common/components/loaderBlock/loaderBlock.component';
 
 import { SearchComponent } from './pages/courses/search/search.component';
 import { CourceComponent } from './pages/courses/course/course.component';
@@ -42,6 +43,7 @@ import { AddCourceButtonComponent } from './pages/courses/addNewOne/addNewOne.co
 
 import { CoursesService } from './pages/courses/cources.service';
 import { LoginService } from './pages/login/login.service';
+import { LoaderService } from './common/components/loaderBlock/loaderBlock.service';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -73,6 +75,7 @@ type StoreType = {
     HeaderComponent,
     BreadcrumbsComponent,
     FooterComponent,
+    LoaderBlockComponent,
 
     SearchComponent,
     AddCourceButtonComponent,
@@ -91,7 +94,8 @@ type StoreType = {
     ENV_PROVIDERS,
     APP_PROVIDERS,
     CoursesService,
-    LoginService
+    LoginService,
+    LoaderService
   ]
 })
 export class AppModule {

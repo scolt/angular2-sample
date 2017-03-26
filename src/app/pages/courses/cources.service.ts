@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ApplicationRef  } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs';
 import { ICourse } from './course/course.component';
 
 @Injectable()
 export class CoursesService {
-  public courses: Subject<ICourse[]> = new BehaviorSubject<any>([]);
+  public courses: Subject<ICourse[]> = new BehaviorSubject<ICourse[]>([]);
 
   getList() {
     this.courses.next([
@@ -54,9 +54,9 @@ export class CoursesService {
   }
 
   remove(id: string) {
-    const indexToDelete = this.courses['value'].findIndex((item) => item.id === id);
-    let newValue = this.courses['value'].slice();
-    newValue.splice(indexToDelete, 1);
-    this.courses.next(newValue);
+      const indexToDelete = this.courses['value'].findIndex((item) => item.id === id);
+      let newValue = this.courses['value'].slice();
+      newValue.splice(indexToDelete, 1);
+      this.courses.next(newValue);
   }
 }

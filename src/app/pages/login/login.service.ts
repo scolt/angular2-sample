@@ -13,7 +13,7 @@ export interface IAuthenticatedResult {
 
 @Injectable()
 export class LoginService {
-  public authenticatedResult: Subject<any> = new BehaviorSubject<IAuthenticatedResult>({
+  public authenticatedResult: Subject<IAuthenticatedResult> = new BehaviorSubject<IAuthenticatedResult>({
     err: '',
     result: false
   });

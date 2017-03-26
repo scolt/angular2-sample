@@ -1,6 +1,7 @@
 import {
   Component,
-  Input
+  Input,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { Modal } from 'angular2-modal/plugins/vex';
@@ -16,6 +17,7 @@ export interface ICourse {
 
 @Component({
   selector: 'cource',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['course.component.scss'],
   templateUrl: 'course.component.html'
 })

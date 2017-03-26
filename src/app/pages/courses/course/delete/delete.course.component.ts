@@ -1,11 +1,13 @@
 import {
   Component,
   EventEmitter,
-  Output
+  Output,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 @Component({
   selector: 'delete-course',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<span class="black-button" (click)="clicked()">Delete Course</span>`
 })
 export class DeleteCourseComponent {
