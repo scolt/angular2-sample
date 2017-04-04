@@ -1,12 +1,11 @@
 {
-  "vendor": {
-    "js": "/angular2-sample/vendor.46e318108827883cbaea.bundle.js"
-  },
   "main": {
-    "js": "/angular2-sample/main.87b8279bd72e8fff335d.bundle.js",
-    "css": "/angular2-sample/main.6ffa0fe021d1bc31bf05cf0c65bdcd27.css"
+    "js": "main.bundle.js"
+  },
+  "vendor": {
+    "js": "/angular2-sample/vendor.bundle.js"
   },
   "polyfills": {
-    "js": "/angular2-sample/polyfills.4fc5e2b87168115de019.bundle.js"
+    "js": "polyfills.bundle.js"
   }
 }
