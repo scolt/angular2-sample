@@ -16,7 +16,7 @@ export class BreadcrumbsComponent {
   public items: BreadcrumbEnity[] = [
     {
       path: '',
-      title: 'Cources'
+      title: 'courses'
     }
   ];
 }

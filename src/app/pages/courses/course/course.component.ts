@@ -5,23 +5,24 @@ import {
 } from '@angular/core';
 
 import { Modal } from 'angular2-modal/plugins/vex';
-import { CoursesService } from '../cources.service';
+import { CoursesService } from '../courses.service';
 
 export interface ICourse {
   id: string;
   title: string;
-  date: string;
-  duration: string;
+  date?: Date;
+  duration: number;
   content: string;
+  topRated: boolean;
 }
 
 @Component({
-  selector: 'cource',
+  selector: 'course',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['course.component.scss'],
   templateUrl: 'course.component.html'
 })
-export class CourceComponent {
+export class CourseComponent {
   @Input() course: ICourse;
 
   constructor(private modal: Modal, public coursesService: CoursesService) {

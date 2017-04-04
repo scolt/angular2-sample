@@ -9,5 +9,5 @@ import {
   styleUrls: [ './addNewOne.component.scss' ],
   templateUrl: './addNewOne.component.html'
 })
-export class AddCourceButtonComponent {
+export class AddcourseButtonComponent {
 }

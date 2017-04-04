@@ -28,7 +28,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './pages/home';
 import { LoginComponent } from './pages/login';
-import { CourcesComponent } from './pages/courses';
+import { CoursesComponent } from './pages/courses';
 import { NoContentComponent } from './pages/no-content';
 
 import { HeaderComponent } from './common/components/header/header.component';
@@ -37,13 +37,18 @@ import { BreadcrumbsComponent } from './common/components/breadcrumbs/breadcrumb
 import { LoaderBlockComponent } from './common/components/loaderBlock/loaderBlock.component';
 
 import { SearchComponent } from './pages/courses/search/search.component';
-import { CourceComponent } from './pages/courses/course/course.component';
+import { CourseComponent } from './pages/courses/course/course.component';
 import { DeleteCourseComponent } from './pages/courses/course/delete/delete.course.component';
-import { AddCourceButtonComponent } from './pages/courses/addNewOne/addNewOne.component';
+import { AddcourseButtonComponent } from './pages/courses/addNewOne/addNewOne.component';
+import { HighlightDirective } from './pages/courses/highlight/highlight.directive';
 
-import { CoursesService } from './pages/courses/cources.service';
+import { CoursesService } from './pages/courses/courses.service';
 import { LoginService } from './pages/login/login.service';
 import { LoaderService } from './common/components/loaderBlock/loaderBlock.service';
+
+import { DurationPipe } from './common/pipes/duration.pipe';
+import { OrderByPipe } from './common/pipes/orderBy.pipe';
+import { FilterPipe } from './common/pipes/filter.pipe';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -69,8 +74,11 @@ type StoreType = {
     AppComponent,
     HomeComponent,
     LoginComponent,
-    CourcesComponent,
+    CoursesComponent,
     NoContentComponent,
+    DurationPipe,
+    FilterPipe,
+    OrderByPipe,
 
     HeaderComponent,
     BreadcrumbsComponent,
@@ -78,9 +86,10 @@ type StoreType = {
     LoaderBlockComponent,
 
     SearchComponent,
-    AddCourceButtonComponent,
-    CourceComponent,
-    DeleteCourseComponent
+    AddcourseButtonComponent,
+    CourseComponent,
+    DeleteCourseComponent,
+    HighlightDirective
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -95,7 +104,8 @@ type StoreType = {
     APP_PROVIDERS,
     CoursesService,
     LoginService,
-    LoaderService
+    LoaderService,
+    FilterPipe
   ]
 })
 export class AppModule {

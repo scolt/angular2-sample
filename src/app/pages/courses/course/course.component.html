@@ -1,14 +1,14 @@
-<article class="cource">
+<article class="course" highlight [date]="course.date">
 	<div class="content">
 		<header>
-			<h2>{{course.title}}</h2>
-			<span class="duration">{{course.duration}}</span>
-			<span class="date">{{course.date}}</span>
+			<h2>{{course.title | uppercase}} <i class="material-icons star" *ngIf="course.topRated">star_rate</i></h2>
+			<span class="duration">{{course.duration | duration}}</span>
+			<span class="date">{{course.date | date:'fullDate'}}</span>
 		</header>
 		<p>{{course.content}}</p>
 	</div>
 	<div class="actions">
-		<a href="">Edit Cource</a>
+		<a href="">Edit course</a>
 		<delete-course (deleteCourse)="handleDeleteClick()"></delete-course>
 	</div>
 </article>

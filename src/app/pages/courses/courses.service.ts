@@ -1,44 +1,57 @@
 import { Injectable, ApplicationRef  } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs';
 import { ICourse } from './course/course.component';
+import { FilterPipe } from '../../common/pipes/filter.pipe';
 
-@Injectable()
-export class CoursesService {
-  public courses: Subject<ICourse[]> = new BehaviorSubject<ICourse[]>([]);
-
-  getList() {
-    this.courses.next([
-      {
-        id: '1',
-        title: 'Video Cource One',
-        date: (new Date()).toString().split(' G')[0],
-        duration: '1h 28m',
-        content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin ut velit eu accumsan. 
+let courses = [
+  {
+    id: '1',
+    title: 'Video course One',
+    date: (new Date()),
+    duration: 88 * 60 * 1000,
+    topRated: true,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin ut velit eu accumsan. 
       Nunc rutrum varius erat quis dignissim. Vestibulum maximus, nulla nec luctus condimentum, ipsum metus 
       lacinia quam, sit amet rhoncus sem nisl vel nibh. Cras rhoncus tristique mollis. Sed id commodo ex. Vivamus sodales 
       nisi sit amet ex finibus, quis tincidunt est iaculis. Nulla bibendum ligula lectus, sed laoreet nunc venenatis eu.`
-      },
-      {
-        id: '2',
-        title: 'Angular Global Cource X',
-        date: (new Date()).toString().split(' G')[0],
-        duration: '2h 39m',
-        content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin ut velit eu accumsan.
+  },
+  {
+    id: '2',
+    title: 'Angular Global course X',
+    topRated: false,
+    duration: 159 * 60 * 1000,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin ut velit eu accumsan.
       Nunc rutrum varius erat quis dignissim. Vestibulum maximus, nulla nec luctus condimentum, ipsum metus
       lacinia quam, sit amet rhoncus sem nisl vel nibh. Cras rhoncus tristique mollis. Sed id commodo ex. Vivamus sodales
       nisi sit amet ex finibus, quis tincidunt est iaculis. Nulla bibendum ligula lectus, sed laoreet nunc venenatis eu.`
-      },
-      {
-        id: '3',
-        title: 'Short Cource',
-        date: (new Date()).toString().split(' G')[0],
-        duration: '28m',
-        content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin ut velit eu accumsan. 
+  },
+  {
+    id: '3',
+    title: 'Short course',
+    date: (new Date((new Date().getTime()) - 15 * 24 * 60 * 60 * 1000)),
+    duration: 28 * 60 * 1000,
+    topRated: false,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin ut velit eu accumsan. 
       Nunc rutrum varius erat quis dignissim. Vestibulum maximus, nulla nec luctus condimentum, ipsum metus 
       lacinia quam, sit amet rhoncus sem nisl vel nibh. Cras rhoncus tristique mollis. Sed id commodo ex. Vivamus sodales 
       nisi sit amet ex finibus, quis tincidunt est iaculis. Nulla bibendum ligula lectus, sed laoreet nunc venenatis eu.`
-      }
-    ]);
+  }
+];
+
+@Injectable()
+export class CoursesService {
+  public courses: BehaviorSubject<ICourse[]> = new BehaviorSubject<ICourse[]>([]);
+
+  constructor(public filterPipe: FilterPipe) {}
+
+  filterByName(query: string) {
+    this.courses.next(
+      this.filterPipe.transform(courses, 'title', query)
+    );
+  }
+
+  getList() {
+    this.courses.next(courses);
   }
 
   create() {
@@ -54,9 +67,9 @@ export class CoursesService {
   }
 
   remove(id: string) {
-      const indexToDelete = this.courses['value'].findIndex((item) => item.id === id);
-      let newValue = this.courses['value'].slice();
-      newValue.splice(indexToDelete, 1);
-      this.courses.next(newValue);
+      const indexToDelete = courses.findIndex((item) => item.id === id);
+      courses = courses.slice();
+      courses.splice(indexToDelete, 1);
+      this.courses.next(courses);
   }
 }

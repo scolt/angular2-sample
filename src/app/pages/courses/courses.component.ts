@@ -6,16 +6,16 @@ import {
 } from '@angular/core';
 
 import { ICourse } from './course/course.component';
-import { CoursesService } from './cources.service';
+import { CoursesService } from './courses.service';
 
 @Component({
-  selector: 'cources',
+  selector: 'courses',
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['courses.component.scss'],
   templateUrl: 'courses.component.html'
 })
-export class CourcesComponent implements OnInit {
+export class CoursesComponent implements OnInit {
   public courses: ICourse[] = [];
 
   constructor(public coursesService: CoursesService, private cd: ChangeDetectorRef) {}

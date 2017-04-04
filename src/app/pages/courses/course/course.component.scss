@@ -1,7 +1,23 @@
 @import '../../../../styles/variables';
 
-.cource {
+.course {
   display: flex;
+  padding: 10px;
+}
+
+.coming-soon {
+  border: 5px solid #00f0ed;
+}
+
+.star {
+  position: relative;
+  width: 25px;
+  top: 5px;
+  color: #ffb000;
+}
+
+.new {
+  border: 5px solid #00f05b;
 }
 
 .actions {
@@ -23,7 +39,7 @@
   }
 }
 
-.cource {
+.course {
   h2 {
     margin: 0;
     display: inline-block;
@@ -40,13 +56,13 @@
   }
 }
 
-.cource {
+.course {
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
 }
 
-.cource:after {
+.course:after {
     content: '';
     display: block;
     height: 1px;
