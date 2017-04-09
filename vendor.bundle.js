@@ -339,7 +339,7 @@ function noop() { }
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__framework_fluent_assign__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__framework_fluent_assign__ = __webpack_require__(34);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_0__framework_fluent_assign__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__framework_utils__ = __webpack_require__(6);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_1__framework_utils__["e"]; });
@@ -347,7 +347,7 @@ function noop() { }
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_1__framework_utils__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__framework_createComponent__ = __webpack_require__(17);
 /* unused harmony reexport createComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_errors__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_errors__ = __webpack_require__(35);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_dialog_ref__ = __webpack_require__(8);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__models_dialog_ref__["a"]; });
@@ -357,7 +357,7 @@ function noop() { }
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_index__ = __webpack_require__(20);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_6__providers_index__["a"]; });
 /* unused harmony reexport DOMOverlayRenderer */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_overlay_context__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_overlay_context__ = __webpack_require__(37);
 /* unused harmony reexport overlayConfigFactory */
 /* unused harmony reexport OverlayContext */
 /* unused harmony reexport OverlayContextBuilder */
@@ -366,17 +366,17 @@ function noop() { }
 /* unused harmony reexport ModalOverlay */
 /* unused harmony reexport OverlayDialogBoundary */
 /* unused harmony reexport OverlayTarget */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__models_modal_context__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__models_modal_context__ = __webpack_require__(36);
 /* unused harmony reexport DEFAULT_VALUES */
 /* unused harmony reexport ModalContext */
 /* unused harmony reexport ModalContextBuilder */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_modal_open_context__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_modal_open_context__ = __webpack_require__(101);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_10__models_modal_open_context__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_10__models_modal_open_context__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_index__ = __webpack_require__(16);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_11__components_index__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_11__components_index__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular2_modal_module__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular2_modal_module__ = __webpack_require__(96);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_12__angular2_modal_module__["a"]; });
 
 
@@ -398,10 +398,10 @@ function noop() { }
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__framework_utils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_errors__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_errors__ = __webpack_require__(35);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogRef; });
 
 
@@ -612,9 +612,9 @@ FormDropIn = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_filter__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_filter__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_filter__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__framework_createComponent__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BaseDynamicComponent; });
@@ -725,13 +725,13 @@ var BaseDynamicComponent = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__swap_component_directive__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__swap_component_directive__ = __webpack_require__(99);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__swap_component_directive__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_dynamic_component__ = __webpack_require__(15);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__base_dynamic_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_backdrop__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_backdrop__ = __webpack_require__(97);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__css_backdrop__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__css_dialog_container__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__css_dialog_container__ = __webpack_require__(98);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__css_dialog_container__["a"]; });
 
 
@@ -784,13 +784,13 @@ var OverlayRenderer = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__overlay_directives__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__overlay_directives__ = __webpack_require__(103);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__overlay_directives__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__overlay_directives__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_0__overlay_directives__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__overlay_component__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__overlay_component__ = __webpack_require__(102);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__overlay_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__overlay_service__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__overlay_service__ = __webpack_require__(39);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__overlay_service__["a"]; });
 
 
@@ -802,11 +802,11 @@ var OverlayRenderer = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dom_modal_renderer__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dom_modal_renderer__ = __webpack_require__(104);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__dom_modal_renderer__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal__ = __webpack_require__(105);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__modal__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__outside_event_plugin__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__outside_event_plugin__ = __webpack_require__(106);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__outside_event_plugin__["a"]; });
 
 
@@ -826,7 +826,8 @@ var OverlayRenderer = (function () {
 /* 30 */,
 /* 31 */,
 /* 32 */,
-/* 33 */
+/* 33 */,
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1065,7 +1066,7 @@ var FluentAssign = (function () {
 //# sourceMappingURL=fluent-assign.js.map
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1091,12 +1092,12 @@ var DialogBailOutError = (function (_super) {
 //# sourceMappingURL=errors.js.map
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__framework_utils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__overlay_context__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__overlay_context__ = __webpack_require__(37);
 /* unused harmony export DEFAULT_VALUES */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ModalContextBuilder; });
@@ -1137,11 +1138,11 @@ var ModalContextBuilder = (function (_super) {
 //# sourceMappingURL=modal-context.js.map
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__framework_fluent_assign__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__framework_fluent_assign__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__framework_utils__ = __webpack_require__(6);
 /* unused harmony export DEFAULT_VALUES */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OverlayContext; });
@@ -1231,7 +1232,7 @@ function overlayConfigFactory(context, baseContextType, baseConfig) {
 //# sourceMappingURL=overlay-context.js.map
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1271,14 +1272,14 @@ var vcRefStore = { getVCRef: getVCRef, setVCRef: setVCRef, delVCRef: delVCRef };
 //# sourceMappingURL=vc-ref-store.js.map
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_tokens__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_dialog_ref_stack__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_vc_ref_store__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_dialog_ref_stack__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_vc_ref_store__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_dialog_ref__ = __webpack_require__(8);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Overlay; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1372,26 +1373,26 @@ Overlay = __decorate([
 //# sourceMappingURL=overlay.service.js.map
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal__ = __webpack_require__(42);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__modal__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_context__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_context__ = __webpack_require__(41);
 /* unused harmony reexport VEXModalContext */
 /* unused harmony reexport VEXModalContextBuilder */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__presets_dropin_preset__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__presets_dropin_preset__ = __webpack_require__(44);
 /* unused harmony reexport DropInPreset */
 /* unused harmony reexport DropInPresetBuilder */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dialog_form_modal__ = __webpack_require__(11);
 /* unused harmony reexport DialogFormModal */
 /* unused harmony reexport FormDropIn */
 /* unused harmony reexport VEXDialogButtons */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__presets_dialog_preset__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__presets_dialog_preset__ = __webpack_require__(43);
 /* unused harmony reexport DialogPreset */
 /* unused harmony reexport DialogPresetBuilder */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vex_module__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vex_module__ = __webpack_require__(107);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_5__vex_module__["a"]; });
 /* unused harmony reexport providers */
 
@@ -1403,7 +1404,7 @@ Overlay = __decorate([
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1475,17 +1476,17 @@ var VEXModalContextBuilder = (function (_super) {
 //# sourceMappingURL=modal-context.js.map
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_first__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_first__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_first__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_combineLatest__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_combineLatest__ = __webpack_require__(291);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_combineLatest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_combineLatest__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_modal__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__presets_dropin_preset__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__presets_dropin_preset__ = __webpack_require__(44);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Modal; });
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1579,12 +1580,12 @@ Modal = __decorate([
 //# sourceMappingURL=modal.js.map
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_modal__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_context__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_context__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dialog_form_modal__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogPreset; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DialogPresetBuilder; });
@@ -1650,13 +1651,13 @@ var DialogPresetBuilder = (function (_super) {
 //# sourceMappingURL=dialog-preset.js.map
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_modal__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dialog_form_modal__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dialog_preset__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dialog_preset__ = __webpack_require__(43);
 /* unused harmony export DropInPreset */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropInPresetBuilder; });
 var __extends = (this && this.__extends) || function (d, b) {
@@ -1726,7 +1727,7 @@ var DropInPresetBuilder = (function (_super) {
 //# sourceMappingURL=dropin-preset.js.map
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports) {
 
 /*
@@ -1978,7 +1979,6 @@ function updateLink(linkElement, obj) {
 
 
 /***/ }),
-/* 45 */,
 /* 46 */,
 /* 47 */,
 /* 48 */,
@@ -2026,7 +2026,10 @@ function updateLink(linkElement, obj) {
 /* 90 */,
 /* 91 */,
 /* 92 */,
-/* 93 */
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2116,7 +2119,7 @@ var ModalModule_1;
 //# sourceMappingURL=angular2-modal.module.js.map
 
 /***/ }),
-/* 94 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2175,7 +2178,7 @@ CSSBackdrop = __decorate([
 //# sourceMappingURL=css-backdrop.js.map
 
 /***/ }),
-/* 95 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2230,7 +2233,7 @@ CSSDialogContainer = __decorate([
 //# sourceMappingURL=css-dialog-container.js.map
 
 /***/ }),
-/* 96 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2307,7 +2310,7 @@ SwapComponentDirective = __decorate([
 //# sourceMappingURL=swap-component.directive.js.map
 
 /***/ }),
-/* 97 */
+/* 100 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2397,12 +2400,12 @@ var DialogRefStack = (function () {
 //# sourceMappingURL=dialog-ref-stack.js.map
 
 /***/ }),
-/* 98 */
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_index__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_context__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_context__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__framework_utils__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalOpenContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ModalOpenContextBuilder; });
@@ -2468,7 +2471,7 @@ var ModalOpenContextBuilder = (function (_super) {
 //# sourceMappingURL=modal-open-context.js.map
 
 /***/ }),
-/* 99 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2698,14 +2701,14 @@ ModalOverlay = __decorate([
 //# sourceMappingURL=overlay.component.js.map
 
 /***/ }),
-/* 100 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_dialog_ref__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_vc_ref_store__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__overlay_service__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_vc_ref_store__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__overlay_service__ = __webpack_require__(39);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return OverlayDialogBoundary; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OverlayTarget; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DefaultOverlayTarget; });
@@ -2796,7 +2799,7 @@ DefaultOverlayTarget = __decorate([
 //# sourceMappingURL=overlay.directives.js.map
 
 /***/ }),
-/* 101 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2845,7 +2848,7 @@ DOMOverlayRenderer = __decorate([
 //# sourceMappingURL=dom-modal-renderer.js.map
 
 /***/ }),
-/* 102 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2936,7 +2939,7 @@ var Modal = (function () {
 //# sourceMappingURL=modal.js.map
 
 /***/ }),
-/* 103 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3033,14 +3036,14 @@ DOMOutsideEventPlugin = __decorate([
 //# sourceMappingURL=outside-event-plugin.js.map
 
 /***/ }),
-/* 104 */
+/* 107 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_modal__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dialog_form_modal__ = __webpack_require__(11);
 /* unused harmony export providers */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VexModalModule; });

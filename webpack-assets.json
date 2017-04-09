@@ -3,7 +3,7 @@
     "js": "main.bundle.js"
   },
   "vendor": {
-    "js": "/angular2-sample/vendor.bundle.js"
+    "js": "vendor.bundle.js"
   },
   "polyfills": {
     "js": "polyfills.bundle.js"
