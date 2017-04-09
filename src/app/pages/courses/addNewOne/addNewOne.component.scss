@@ -1,11 +1,10 @@
 @import '../../../../styles/variables';
 
 
-  button {
+  a.button {
     height: 40px;
+    line-height: 40px;
     text-align: center;
-    background: $main-black;
-    color: $gray-font-color;
-    border: 0;
     float: right;
+    width: 200px;
   }

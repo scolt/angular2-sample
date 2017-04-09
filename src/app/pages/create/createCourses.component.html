@@ -1,0 +1,28 @@
+<div class="form">
+  <h1>Create new course</h1>
+  <div class="block block-white">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="input-wrapper">
+        <input type="text" id="title"
+               placeholder="Title"
+               required
+               [(ngModel)]="course.title" name="title"
+               #title="ngModel">
+      </div>
+      <div class="input-wrapper">
+        <textarea id="description"
+        placeholder="Description"
+        required
+        [(ngModel)]="course.description" name="description"
+        #description="ngModel"></textarea>
+      </div>
+      <date-field (dateUpdated)="handleDateUpdate($event)"></date-field>
+      <duration-field (dateUpdated)="handleDurationUpdate($event)"></duration-field>
+      <div class="form-actions">
+        <input type="submit" value="Create" class="button dark">
+        <br>
+        <a [routerLink]="['/courses']">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

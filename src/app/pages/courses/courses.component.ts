@@ -2,11 +2,13 @@ import {
   Component,
   ChangeDetectorRef,
   OnInit,
+  OnDestroy,
   ChangeDetectionStrategy
 } from '@angular/core';
 
 import { ICourse } from './course/course.component';
 import { CoursesService } from './courses.service';
+import { ISubscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'courses',
@@ -15,16 +17,22 @@ import { CoursesService } from './courses.service';
   styleUrls: ['courses.component.scss'],
   templateUrl: 'courses.component.html'
 })
-export class CoursesComponent implements OnInit {
+export class CoursesComponent implements OnInit, OnDestroy {
   public courses: ICourse[] = [];
+  private subscription: ISubscription;
 
-  constructor(public coursesService: CoursesService, private cd: ChangeDetectorRef) {}
+  constructor(public coursesService: CoursesService, private cd: ChangeDetectorRef) {
+  }
 
-  public ngOnInit() {
-    this.coursesService.courses.subscribe((courses: ICourse[]) => {
+  ngOnInit() {
+    this.subscription = this.coursesService.courses.subscribe((courses: ICourse[]) => {
       this.courses = courses;
       this.cd.markForCheck();
     });
     this.coursesService.getList();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

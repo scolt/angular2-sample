@@ -38,6 +38,9 @@ import { LoaderBlockComponent } from './common/components/loaderBlock/loaderBloc
 
 import { SearchComponent } from './pages/courses/search/search.component';
 import { CourseComponent } from './pages/courses/course/course.component';
+import { CreateCoursesComponent } from './pages/create/createCourses.component';
+import { DateFieldComponent } from './pages/create/dateField/dateField.component';
+import { DurationFieldComponent } from './pages/create/durationField/durationField.component';
 import { DeleteCourseComponent } from './pages/courses/course/delete/delete.course.component';
 import { AddcourseButtonComponent } from './pages/courses/addNewOne/addNewOne.component';
 import { HighlightDirective } from './pages/courses/highlight/highlight.directive';
@@ -79,6 +82,8 @@ type StoreType = {
     DurationPipe,
     FilterPipe,
     OrderByPipe,
+    DateFieldComponent,
+    DurationFieldComponent,
 
     HeaderComponent,
     BreadcrumbsComponent,
@@ -89,6 +94,7 @@ type StoreType = {
     AddcourseButtonComponent,
     CourseComponent,
     DeleteCourseComponent,
+    CreateCoursesComponent,
     HighlightDirective
   ],
   imports: [ // import Angular's modules

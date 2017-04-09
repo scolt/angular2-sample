@@ -1,0 +1,8 @@
+<div class="input-wrapper">
+  <input type="number" id="duration"
+         placeholder="Duration"
+         max="999"
+         (ngModelChange)="triggerDate($event)"
+         [(ngModel)]="date">
+  <span class="duration">{{date | duration}}</span>
+</div>

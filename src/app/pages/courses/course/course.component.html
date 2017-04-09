@@ -5,10 +5,10 @@
 			<span class="duration">{{course.duration | duration}}</span>
 			<span class="date">{{course.date | date:'fullDate'}}</span>
 		</header>
-		<p>{{course.content}}</p>
+		<p>{{course.description}}</p>
 	</div>
 	<div class="actions">
-		<a href="">Edit course</a>
-		<delete-course (deleteCourse)="handleDeleteClick()"></delete-course>
+		<a href="" class="button dark">Edit course</a>
+		<a class="button dark" delete-course (deleteCourse)="handleDeleteClick()"></a>
 	</div>
 </article>

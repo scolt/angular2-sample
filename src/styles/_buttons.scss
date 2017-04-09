@@ -5,6 +5,8 @@
   display: block;
   border: 0;
   background: transparent;
+  text-decoration: none;
+  overflow: hidden;
 
   &.with-icon {
     display: flex;
@@ -26,6 +28,7 @@
     &:hover {
       background: #fff;
       color: $main-black;
+      text-decoration: none;
     }
   }
 }

@@ -7,12 +7,14 @@ import {
 import { Modal } from 'angular2-modal/plugins/vex';
 import { CoursesService } from '../courses.service';
 
+import { DeleteCourseComponent } from './delete/delete.course.component';
+
 export interface ICourse {
   id: string;
   title: string;
   date?: Date;
   duration: number;
-  content: string;
+  description: string;
   topRated: boolean;
 }
 

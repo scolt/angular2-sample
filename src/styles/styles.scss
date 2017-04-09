@@ -5,6 +5,10 @@
 @import 'buttons';
 @import 'modals';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;

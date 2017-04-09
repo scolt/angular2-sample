@@ -1,0 +1,8 @@
+<div class="input-wrapper">
+  <input type="text" id="date"
+         placeholder="Date"
+         required
+         (ngModel)="date" name="date"
+         (ngModelChange)="triggerDate($event)"
+         #date="ngModel">
+</div>
