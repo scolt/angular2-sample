@@ -46,7 +46,8 @@ import { AddcourseButtonComponent } from './pages/courses/addNewOne/addNewOne.co
 import { HighlightDirective } from './pages/courses/highlight/highlight.directive';
 
 import { CoursesService } from './pages/courses/courses.service';
-import { LoginService } from './pages/login/login.service';
+import { UserService } from './common/services/user.service';
+import { HttpService } from './common/services/http.service';
 import { LoaderService } from './common/components/loaderBlock/loaderBlock.service';
 
 import { DurationPipe } from './common/pipes/duration.pipe';
@@ -109,7 +110,8 @@ type StoreType = {
     ENV_PROVIDERS,
     APP_PROVIDERS,
     CoursesService,
-    LoginService,
+    UserService,
+    HttpService,
     LoaderService,
     FilterPipe
   ]

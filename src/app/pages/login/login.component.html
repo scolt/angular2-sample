@@ -6,16 +6,16 @@
         {{error}}
       </div>
       <div class="input-wrapper">
-        <div *ngIf="username.errors && (username.dirty || username.touched) && username.errors.required"
+        <div *ngIf="login.errors && (login.dirty || login.touched) && login.errors.required"
              class="input-error">
           Please provide login.
         </div>
         <input type="text" id="login"
                placeholder="Login"
                required
-               [ngClass]="{'error': username.errors && (username.dirty || username.touched) && username.errors.required}"
-               [(ngModel)]="model.username" name="username"
-               #username="ngModel">
+               [ngClass]="{'error': login.errors && (login.dirty || login.touched) && login.errors.required}"
+               [(ngModel)]="model.login" name="login"
+               #login="ngModel">
       </div>
       <div class="input-wrapper">
         <div *ngIf="password.errors && (password.dirty || password.touched) && password.errors.required"

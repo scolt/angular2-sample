@@ -1,10 +1,11 @@
 import {
   Component,
   ChangeDetectorRef,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  OnDestroy
 } from '@angular/core';
 
-import { LoginService, IAuthenticatedResult } from '../../../pages/login/login.service';
+import { UserService, IAuthenticatedResult } from '../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,15 +14,19 @@ import { Router } from '@angular/router';
   styleUrls: [ './header.component.scss' ],
   templateUrl: './header.component.html'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnDestroy {
   isAuthenticatedUser: boolean = false;
-  userInfo: any = {};
+  username: string = '';
   isLightUI: boolean = false;
 
-  constructor(public loginService: LoginService, private router: Router, private cd: ChangeDetectorRef) {
-    this.loginService.authenticatedResult.subscribe((result: IAuthenticatedResult) => {
+  constructor(public userService: UserService, private router: Router, private cd: ChangeDetectorRef) {
+    this.userService.authenticatedResult.subscribe((result: IAuthenticatedResult) => {
       this.isAuthenticatedUser = result.result;
-      this.userInfo = result.userInfo;
+      this.cd.markForCheck();
+    });
+
+    this.userService.userInfo.subscribe((result) => {
+      this.username = result.first + ' ' + result.last;
       this.cd.markForCheck();
     });
 
@@ -32,6 +37,10 @@ export class HeaderComponent {
   }
 
   logoff(): void {
-    this.loginService.logout();
+    this.userService.logout();
+  }
+
+  ngOnDestroy() {
+    /* Header will never destroyed */
   }
 }

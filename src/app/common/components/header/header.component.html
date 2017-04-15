@@ -8,7 +8,7 @@
 
 	<div class="right-menu" *ngIf="!isLightUI">
     <a [routerLink]="['./login']" *ngIf="!isAuthenticatedUser">Login</a>
-		<span class="username" *ngIf="isAuthenticatedUser">{{userInfo.name}}</span>
+		<span class="username" *ngIf="isAuthenticatedUser">{{username}}</span>
 		<a *ngIf="isAuthenticatedUser" (click)="logoff()">Logoff</a>
 	</div>
 </header>
