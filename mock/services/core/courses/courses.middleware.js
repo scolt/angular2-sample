@@ -3,7 +3,19 @@ const router = express.Router();
 const url = require('url');
 
 module.exports = (server) => {
+  router.get('/courses/delete', (req, res, next) => {
+    let url_parts = url.parse(req.originalUrl, true),
+    query = url_parts.query,
+    id = query.id,
+    dbState = server.db.getState();
+    const indexToDelete = dbState.courses.findIndex((item) => item.id == id);
+    dbState.courses.splice(indexToDelete, 1);
+    server.db.setState(dbState);
 
+    res.json({
+      status: 'success'
+    });
+  });
 	router.get('/courses', (req, res, next) => {
 		let url_parts = url.parse(req.originalUrl, true),
 			query = url_parts.query,

@@ -76,10 +76,10 @@ export class CoursesService {
   }
 
   remove(id: string) {
-    console.log('remove, not implemented yet');
-    // const indexToDelete = courses.findIndex((item) => item.id === id);
-    // courses = courses.slice();
-    // courses.splice(indexToDelete, 1);
-    // this.courses.next(courses);
+    let params = new URLSearchParams();
+    params.set('id', id);
+    this.http.get('/courses/delete', {search: params})
+      .map((result) => result.json())
+      .subscribe(this.getList.bind(this));
   }
 }
