@@ -43,6 +43,7 @@ import { DateFieldComponent } from './pages/create/dateField/dateField.component
 import { DurationFieldComponent } from './pages/create/durationField/durationField.component';
 import { DeleteCourseComponent } from './pages/courses/course/delete/delete.course.component';
 import { AddcourseButtonComponent } from './pages/courses/addNewOne/addNewOne.component';
+import { PagingComponent } from './pages/courses/paging/paging.component';
 import { HighlightDirective } from './pages/courses/highlight/highlight.directive';
 
 import { CoursesService } from './pages/courses/courses.service';
@@ -85,6 +86,7 @@ type StoreType = {
     OrderByPipe,
     DateFieldComponent,
     DurationFieldComponent,
+    PagingComponent,
 
     HeaderComponent,
     BreadcrumbsComponent,

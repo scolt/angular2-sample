@@ -1,57 +1,66 @@
-import { Injectable, ApplicationRef  } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { ICourse } from './course/course.component';
 import { FilterPipe } from '../../common/pipes/filter.pipe';
+import { HttpService } from '../../common/services/http.service';
+import { URLSearchParams } from '@angular/http';
 
-let courses = [
-  {
-    id: '1',
-    title: 'Video course One',
-    date: (new Date()),
-    duration: 88,
-    topRated: true,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin ut velit eu accumsan. 
-      Nunc rutrum varius erat quis dignissim. Vestibulum maximus, nulla nec luctus condimentum, ipsum metus 
-      lacinia quam, sit amet rhoncus sem nisl vel nibh. Cras rhoncus tristique mollis. Sed id commodo ex. Vivamus sodales 
-      nisi sit amet ex finibus, quis tincidunt est iaculis. Nulla bibendum ligula lectus, sed laoreet nunc venenatis eu.`
-  },
-  {
-    id: '2',
-    title: 'Angular Global course X',
-    topRated: false,
-    duration: 159,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin ut velit eu accumsan.
-      Nunc rutrum varius erat quis dignissim. Vestibulum maximus, nulla nec luctus condimentum, ipsum metus
-      lacinia quam, sit amet rhoncus sem nisl vel nibh. Cras rhoncus tristique mollis. Sed id commodo ex. Vivamus sodales
-      nisi sit amet ex finibus, quis tincidunt est iaculis. Nulla bibendum ligula lectus, sed laoreet nunc venenatis eu.`
-  },
-  {
-    id: '3',
-    title: 'Short course',
-    date: (new Date((new Date().getTime()) - 15 * 24 * 60 * 60 * 1000)),
-    duration: 28,
-    topRated: false,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin ut velit eu accumsan. 
-      Nunc rutrum varius erat quis dignissim. Vestibulum maximus, nulla nec luctus condimentum, ipsum metus 
-      lacinia quam, sit amet rhoncus sem nisl vel nibh. Cras rhoncus tristique mollis. Sed id commodo ex. Vivamus sodales 
-      nisi sit amet ex finibus, quis tincidunt est iaculis. Nulla bibendum ligula lectus, sed laoreet nunc venenatis eu.`
-  }
-];
+export interface ICoursesListParams {
+  page: number;
+  count: number;
+  search: string;
+}
+
+export interface ICoursesListResponse {
+  totalPages: number;
+  courses: ICourse[];
+}
 
 @Injectable()
 export class CoursesService {
-  public courses: BehaviorSubject<ICourse[]> = new BehaviorSubject<ICourse[]>([]);
+  public courses: Subject<ICoursesListResponse> = new Subject<ICoursesListResponse>();
+  private params: ICoursesListParams = {
+    page: 1,
+    count: 5,
+    search: ''
+  };
 
-  constructor(public filterPipe: FilterPipe) {}
+  constructor(public filterPipe: FilterPipe, private http: HttpService) {
+  }
+
+  setPage(page: number) {
+    this.params.page = page;
+    this.getList();
+  }
 
   filterByName(query: string) {
-    this.courses.next(
-      this.filterPipe.transform(courses, 'title', query)
-    );
+    this.params.search = query;
+    this.params.page = 1;
+    this.getList();
   }
 
   getList() {
-    this.courses.next(courses);
+    let params = new URLSearchParams();
+    params.set('start', ((this.params.page - 1) * this.params.count).toString());
+    params.set('count', this.params.count.toString());
+    params.set('search', this.params.search);
+
+    this.http.get('/courses', {search: params})
+      .map((res) => {
+        const result = res.json();
+        result.courses = result.courses.map((item) => {
+          item.duration = item.length;
+          item.title = item.name;
+          delete item.length;
+          delete item.name;
+          return item;
+        });
+
+        return result;
+      })
+      .subscribe((result: ICoursesListResponse) => {
+        this.courses.next(result);
+      });
   }
 
   create() {
@@ -67,9 +76,10 @@ export class CoursesService {
   }
 
   remove(id: string) {
-      const indexToDelete = courses.findIndex((item) => item.id === id);
-      courses = courses.slice();
-      courses.splice(indexToDelete, 1);
-      this.courses.next(courses);
+    console.log('remove, not implemented yet');
+    // const indexToDelete = courses.findIndex((item) => item.id === id);
+    // courses = courses.slice();
+    // courses.splice(indexToDelete, 1);
+    // this.courses.next(courses);
   }
 }

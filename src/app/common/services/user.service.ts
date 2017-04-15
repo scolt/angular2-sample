@@ -4,7 +4,6 @@ import { ICreds } from '../../pages/login/login.component';
 import { Router } from '@angular/router';
 import { Response } from '@angular/http';
 import { HttpService } from './http.service';
-import config from '../config';
 
 const TOKEN_KEY_NAME = 'token';
 
@@ -16,7 +15,7 @@ export interface IAuthenticatedResult {
 export interface IUserInfo {
   first: string;
   last: string;
-};
+}
 
 const successLogin: IAuthenticatedResult = {
   err: '',
@@ -38,14 +37,14 @@ export class UserService {
   }
 
   public getProfile(): Promise<any> {
-    return this.http.post(`${config.restUrl}/auth/userinfo`, {}).toPromise().then((user: Response) => {
+    return this.http.post(`/auth/userinfo`, {}).toPromise().then((user: Response) => {
       this.userInfo.next(user.json().name);
       this.authenticatedResult.next(successLogin);
     }, (error) => console.log(error.status, error.statusText));
   }
 
   public login(creds: ICreds): void {
-    this.http.post(`${config.restUrl}/auth/login`, creds).toPromise().then((item: Response) => {
+    this.http.post(`/auth/login`, creds).toPromise().then((item: Response) => {
       localStorage.setItem(TOKEN_KEY_NAME, item.json().token);
       this.getProfile();
       this.router.navigateByUrl('/courses');
