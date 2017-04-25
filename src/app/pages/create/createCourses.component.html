@@ -1,25 +1,46 @@
 <div class="form">
   <h1>Create new course</h1>
   <div class="block block-white">
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-      <div class="input-wrapper">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+      <div class="input-wrapper"
+           [ngClass]="{'error': createForm.controls.title.invalid && !createForm.controls.title.pristine}">
         <input type="text" id="title"
                placeholder="Title"
-               required
-               [(ngModel)]="course.title" name="title"
-               #title="ngModel">
+               formControlName="title"
+               name="title">
+        <div class="input-error" [hidden]="createForm.controls.title.valid || createForm.controls.title.pristine">
+          This field is required. Maxlength is 50.
+        </div>
       </div>
-      <div class="input-wrapper">
+      <div class="input-wrapper"
+           [ngClass]="{'error': createForm.controls.description.invalid && !createForm.controls.description.pristine}">
         <textarea id="description"
         placeholder="Description"
-        required
-        [(ngModel)]="course.description" name="description"
-        #description="ngModel"></textarea>
+        formControlName="description"
+        name="description"></textarea>
+        <div class="input-error" [hidden]="createForm.controls.description.valid || createForm.controls.description.pristine">
+          This field is required. Maxlength is 500.
+        </div>
       </div>
-      <date-field (dateUpdated)="handleDateUpdate($event)"></date-field>
-      <duration-field (dateUpdated)="handleDurationUpdate($event)"></duration-field>
+      <div class="input-wrapper"
+           [ngClass]="{'error': createForm.controls.date.invalid && !createForm.controls.date.pristine}">
+        <date-field formControlName="date"></date-field>
+        <div class="input-error" [hidden]="createForm.controls.date.valid || createForm.controls.date.pristine">
+          This field is required. Date in format 'dd/MM/yyyy'.
+        </div>
+      </div>
+      <div class="input-wrapper"
+           [ngClass]="{'error': createForm.controls.duration.invalid && !createForm.controls.duration.pristine}">
+        <duration-field formControlName="duration"></duration-field>
+        <div class="input-error" [hidden]="createForm.controls.duration.valid || createForm.controls.duration.pristine">
+          This field is required. Only letters is allowed.
+        </div>
+      </div>
+
+      <authors-field [authors]="authors" formControlName="authors"></authors-field>
+
       <div class="form-actions">
-        <input type="submit" value="Create" class="button dark">
+        <input type="submit" value="Create" class="button dark" [disabled]="!createForm.valid">
         <br>
         <a [routerLink]="['/courses']">Cancel</a>
       </div>

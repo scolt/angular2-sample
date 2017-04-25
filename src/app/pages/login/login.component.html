@@ -29,8 +29,7 @@
                [(ngModel)]="model.password" name="password"
                #password="ngModel">
       </div>
-
-      <input type="submit" value="Login" class="button dark">
+      <input type="submit" value="Login" class="button dark" [disabled]="loginForm.invalid || !loginForm.dirty">
     </form>
   </div>
 </div>

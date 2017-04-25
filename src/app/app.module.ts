@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   NgModule,
@@ -41,6 +41,7 @@ import { CourseComponent } from './pages/courses/course/course.component';
 import { CreateCoursesComponent } from './pages/create/createCourses.component';
 import { DateFieldComponent } from './pages/create/dateField/dateField.component';
 import { DurationFieldComponent } from './pages/create/durationField/durationField.component';
+import { AuthorsFieldComponent } from './pages/create/authorsField/authorsField.component';
 import { DeleteCourseComponent } from './pages/courses/course/delete/delete.course.component';
 import { AddcourseButtonComponent } from './pages/courses/addNewOne/addNewOne.component';
 import { PagingComponent } from './pages/courses/paging/paging.component';
@@ -86,6 +87,7 @@ type StoreType = {
     OrderByPipe,
     DateFieldComponent,
     DurationFieldComponent,
+    AuthorsFieldComponent,
     PagingComponent,
 
     HeaderComponent,
@@ -106,6 +108,7 @@ type StoreType = {
     HttpModule,
     ModalModule.forRoot(),
     VexModalModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
@@ -115,7 +118,8 @@ type StoreType = {
     UserService,
     HttpService,
     LoaderService,
-    FilterPipe
+    FilterPipe,
+    FormBuilder
   ]
 })
 export class AppModule {

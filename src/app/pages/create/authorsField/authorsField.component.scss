@@ -1,0 +1,15 @@
+.authors-list {
+  max-height: 200px;
+  overflow: auto;
+  border: 1px solid #333;
+  margin-bottom: 20px;
+
+  .error {
+    background: #ffa6a6;
+    padding: 10px;
+  }
+
+  .input-checkbox-wrapper:hover {
+    background: #ececec;
+  }
+}

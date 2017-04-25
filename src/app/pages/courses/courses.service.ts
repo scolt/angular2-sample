@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ICourse } from './course/course.component';
-import { FilterPipe } from '../../common/pipes/filter.pipe';
 import { HttpService } from '../../common/services/http.service';
 import { URLSearchParams } from '@angular/http';
 
@@ -9,6 +8,12 @@ export interface ICoursesListParams {
   page: number;
   count: number;
   search: string;
+}
+
+export interface IAuthor {
+  id: number;
+  firstName: string;
+  lastName: string;
 }
 
 export interface ICoursesListResponse {
@@ -19,14 +24,15 @@ export interface ICoursesListResponse {
 @Injectable()
 export class CoursesService {
   public courses: Subject<ICoursesListResponse> = new Subject<ICoursesListResponse>();
+  public authors: Subject<IAuthor[]> = new Subject<IAuthor[]>();
+
   private params: ICoursesListParams = {
     page: 1,
     count: 5,
     search: ''
   };
 
-  constructor(public filterPipe: FilterPipe, private http: HttpService) {
-  }
+  constructor(private http: HttpService) {}
 
   setPage(page: number) {
     this.params.page = page;
@@ -37,6 +43,12 @@ export class CoursesService {
     this.params.search = query;
     this.params.page = 1;
     this.getList();
+  }
+
+  getAuthors() {
+    this.http.get('/courses/authors')
+      .map((res) => res.json())
+      .subscribe((result: IAuthor[]) => this.authors.next(result));
   }
 
   getList() {

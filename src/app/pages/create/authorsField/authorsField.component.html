@@ -1,0 +1,11 @@
+<div class="authors-list">
+  <div class="error" *ngIf="touched && result.length === 0">
+    At least one author should be selected
+  </div>
+  <div *ngFor="let author of authors">
+    <label for="item-{{author.id}}" class="input-checkbox-wrapper">
+      <input id="item-{{author.id}}" type="checkbox" (change)="onChange(author.id, $event.target.checked)">
+      <span class="author-name">{{author.firstName}} {{author.lastName}}</span>
+    </label>
+  </div>
+</div>

@@ -3,24 +3,44 @@ import {
   Output,
   EventEmitter,
   ChangeDetectionStrategy,
-  ChangeDetectorRef
+  ChangeDetectorRef,
+  forwardRef
 } from '@angular/core';
 
-import { ICourse } from '../../courses/course/course.component';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+  FormBuilder, FormGroup
+} from '@angular/forms';
 
 @Component({
   selector: 'duration-field',
   templateUrl: 'durationField.component.html',
-  styleUrls: ['durationField.component.scss']
+  styleUrls: ['durationField.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => DurationFieldComponent),
+      multi: true,
+    }
+  ]
 })
-export class DurationFieldComponent {
-  @Output() dateUpdated = new EventEmitter();
-  date: number = 0;
+export class DurationFieldComponent implements ControlValueAccessor {
+  date: number;
+
   constructor(private cd: ChangeDetectorRef) {}
 
-  triggerDate($event: number) {
-    this.date = $event;
-    this.dateUpdated.emit($event);
-    this.cd.markForCheck();
+  writeValue(obj: any) {/* tslint:disable *//* tslint:enable */}
+
+  registerOnTouched(fn: any) {/* tslint:disable *//* tslint:enable */}
+
+  registerOnChange(fn: any) {
+    this.propagateChange = fn;
   }
+
+  onChange(value) {
+    this.propagateChange(value);
+  }
+
+  private propagateChange = (obj: any) => {/* tslint:disable *//* tslint:enable */};
 }

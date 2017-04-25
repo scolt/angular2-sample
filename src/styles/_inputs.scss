@@ -1,3 +1,13 @@
+.error {
+  input, textarea {
+    border-color: red;
+
+    &:focus {
+      border-color: red;
+    }
+  }
+}
+
 input, textarea {
   font-family: Arial;
   font-size: 1rem;
@@ -7,10 +17,6 @@ input, textarea {
   border: 0;
   border-bottom: 1px solid $main-black;
   transition: border-color ease-out .25s;
-
-  &.error {
-    border-color: red;
-  }
 
   &:last-child {
     margin: 0
@@ -34,4 +40,44 @@ input, textarea {
 .input-wrapper {
   margin-bottom: 20px;
   position: relative;
+}
+
+input[type='checkbox'] {
+  opacity: 0;
+  width: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.input-checkbox-wrapper {
+  position: relative;
+  padding: 5px 0 5px 40px;
+  width: 100%;
+  line-height: 22px;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  input {
+    + span:before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #333;
+    }
+    &:checked + span:after {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      background: #00BCD4;
+      box-shadow: 1px 0 1px #ccc;
+    }
+  }
 }
