@@ -5,7 +5,7 @@ import { CoursesComponent } from './pages/courses';
 import { NoContentComponent } from './pages/no-content';
 
 import { CreateCoursesComponent } from './pages/create/createCourses.component';
-import { AuthGuard } from "./common/guards/auth.guard";
+import { AuthGuard } from './common/guards/auth.guard';
 
 export const ROUTES: Routes = [
   {path: '', component: CoursesComponent},
