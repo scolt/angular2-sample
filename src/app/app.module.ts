@@ -53,6 +53,8 @@ import { HttpService } from './common/services/http.service';
 import { LoaderService } from './common/components/loaderBlock/loaderBlock.service';
 import { BreadcrumbService } from './common/services/breadcrumb.service';
 
+import { AuthGuard } from './common/guards/auth.guard';
+
 import { DurationPipe } from './common/pipes/duration.pipe';
 import { OrderByPipe } from './common/pipes/orderBy.pipe';
 import { FilterPipe } from './common/pipes/filter.pipe';
@@ -121,6 +123,7 @@ type StoreType = {
     LoaderService,
     BreadcrumbService,
     FilterPipe,
+    AuthGuard,
     FormBuilder
   ]
 })
