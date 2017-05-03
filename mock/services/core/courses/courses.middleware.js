@@ -31,9 +31,8 @@ module.exports = (server) => {
       to = +query.start + +query.count,
       sort = query.sort,
       queryStr = query.query,
+      id = query.id,
       courses = server.db.getState().courses;
-    console.log(sort);
-    console.log(queryStr);
 
     if (search) {
       courses = courses.filter(item => item.name.toLowerCase().indexOf(search.toLowerCase()) > -1)
@@ -44,7 +43,14 @@ module.exports = (server) => {
     if (courses.length < to) {
       to = courses.length;
     }
-    courses = courses.slice(from, to);
+
+    if (from && to) {
+      courses = courses.slice(from, to);
+    }
+
+    if (id) {
+      courses = courses.filter(item => item.id == id);
+    }
 
     res.json({
       totalPages: totalPages,

@@ -1,5 +1,6 @@
 <div class="breadcrumbs">
 	<span *ngFor="let crumb of items">
-		<a href="crumb.path">{{crumb.title}}</a>
+		<a *ngIf="crumb.path" href="{{crumb.path}}" >{{crumb.title}}</a>
+		<span *ngIf="!crumb.path">{{crumb.title}}</span>
 	</span>
 </div>

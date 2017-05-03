@@ -4,14 +4,19 @@ import { LoginComponent } from './pages/login';
 import { CoursesComponent } from './pages/courses';
 import { NoContentComponent } from './pages/no-content';
 
-import { DataResolver } from './app.resolver';
 import { CreateCoursesComponent } from './pages/create/createCourses.component';
 
 export const ROUTES: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: CoursesComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'courses', component: CoursesComponent},
-  {path: 'courses/create', component: CreateCoursesComponent},
+  {
+    path: 'courses',
+    children: [
+      {path: '', component: CoursesComponent},
+      {path: ':id', component: CreateCoursesComponent},
+      {path: 'new', component: CreateCoursesComponent},
+    ]
+  },
   {path: 'login', component: LoginComponent},
   {path: '**', component: NoContentComponent},
 ];

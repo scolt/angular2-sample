@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { ICourse } from './course/course.component';
 import { HttpService } from '../../common/services/http.service';
 import { URLSearchParams } from '@angular/http';
+import { Router } from '@angular/router';
 
 export interface ICoursesListParams {
   page: number;
@@ -32,7 +33,7 @@ export class CoursesService {
     search: ''
   };
 
-  constructor(private http: HttpService) {}
+  constructor(private router: Router, private http: HttpService) {}
 
   setPage(page: number) {
     this.params.page = page;
@@ -51,11 +52,13 @@ export class CoursesService {
       .subscribe((result: IAuthor[]) => this.authors.next(result));
   }
 
-  getList() {
-    let params = new URLSearchParams();
-    params.set('start', ((this.params.page - 1) * this.params.count).toString());
-    params.set('count', this.params.count.toString());
-    params.set('search', this.params.search);
+  getList(params = null) {
+    if (!params) {
+      params = new URLSearchParams();
+      params.set('start', ((this.params.page - 1) * this.params.count).toString());
+      params.set('count', this.params.count.toString());
+      params.set('search', this.params.search);
+    }
 
     this.http.get('/courses', {search: params})
       .map((res) => {
@@ -75,16 +78,15 @@ export class CoursesService {
       });
   }
 
-  create() {
-    console.log('create, not implemented yet');
+  getItemById(id: string) {
+    let params = new URLSearchParams();
+    params.set('id', id);
+    this.getList(params);
   }
 
-  getItemId(id: string) {
-    console.log('getItemId, not implemented yet');
-  }
-
-  update(id: string) {
-    console.log('update, not implemented yet');
+  save(course: ICourse) {
+    console.log(course);
+    this.router.navigateByUrl('/');
   }
 
   remove(id: string) {

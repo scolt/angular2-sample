@@ -54,6 +54,7 @@ export class UserService {
 
   public logout(): void {
     localStorage.removeItem(TOKEN_KEY_NAME);
+    this.router.navigateByUrl('/');
     this.authenticatedResult.next(successLogout);
   }
 }

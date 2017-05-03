@@ -8,7 +8,6 @@ export function validateDate(c: FormControl) {
   }
 
   let valueToArray = c.value.split('/');
-  console.log(valueToArray);
 
   if (+valueToArray[0] > 31 || +valueToArray[0] < 1) {
     return { validateDate: true };

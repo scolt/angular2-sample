@@ -8,7 +8,7 @@
 		<p>{{course.description}}</p>
 	</div>
 	<div class="actions">
-		<a href="" class="button dark">Edit course</a>
+		<a [routerLink]="['/courses', course.id]" class="button dark">Edit course</a>
 		<a class="button dark" delete-course (deleteCourse)="handleDeleteClick()"></a>
 	</div>
 </article>

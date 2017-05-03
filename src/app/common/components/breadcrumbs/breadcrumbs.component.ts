@@ -1,11 +1,7 @@
 import {
-  Component
+  Component, ChangeDetectorRef
 } from '@angular/core';
-
-export interface BreadcrumbEnity {
-  path: string;
-  title: string;
-}
+import { BreadcrumbEnity, BreadcrumbService } from '../../services/breadcrumb.service';
 
 @Component({
   selector: 'breadcrumbs',
@@ -13,10 +9,11 @@ export interface BreadcrumbEnity {
   templateUrl: './breadcrumbs.component.html'
 })
 export class BreadcrumbsComponent {
-  public items: BreadcrumbEnity[] = [
-    {
-      path: '',
-      title: 'courses'
-    }
-  ];
+  public items: BreadcrumbEnity[] = [];
+  constructor(bs: BreadcrumbService, private cd: ChangeDetectorRef) {
+    bs.breadcrumbs.subscribe((result: BreadcrumbEnity[]) => {
+      this.items = result;
+      cd.markForCheck();
+    });
+  }
 }

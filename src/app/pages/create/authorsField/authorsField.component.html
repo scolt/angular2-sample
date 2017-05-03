@@ -4,7 +4,10 @@
   </div>
   <div *ngFor="let author of authors">
     <label for="item-{{author.id}}" class="input-checkbox-wrapper">
-      <input id="item-{{author.id}}" type="checkbox" (change)="onChange(author.id, $event.target.checked)">
+      <input id="item-{{author.id}}"
+             type="checkbox"
+             (change)="onChange()"
+             [(ngModel)]="authorsBoxes[author.id]">
       <span class="author-name">{{author.firstName}} {{author.lastName}}</span>
     </label>
   </div>

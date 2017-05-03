@@ -33,7 +33,14 @@ export class DateFieldComponent implements ControlValueAccessor {
     });
   }
 
-  writeValue(obj: any) {/* tslint:disable *//* tslint:enable */}
+  writeValue(obj: any) {
+    if (!obj) {
+      return;
+    }
+    const date = new Date(obj);
+    const month = date.getMonth() + 1;
+    this.dateForm.controls['date'].setValue(`${date.getDate()}/${month > 10 ? month : '0' + month}/${date.getFullYear()}`);
+  }
 
   registerOnTouched(fn: any) {/* tslint:disable *//* tslint:enable */}
 

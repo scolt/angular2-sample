@@ -1,4 +1,4 @@
-<div class="form">
+<div class="form" *ngIf="!loading">
   <h1>Create new course</h1>
   <div class="block block-white">
     <form [formGroup]="createForm" (ngSubmit)="onSubmit()">

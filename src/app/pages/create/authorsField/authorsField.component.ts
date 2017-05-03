@@ -9,6 +9,7 @@ import {
   ControlValueAccessor,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
+import { IAuthor } from '../../courses/courses.service';
 
 @Component({
   selector: 'authors-field',
@@ -25,10 +26,19 @@ import {
 })
 export class AuthorsFieldComponent implements ControlValueAccessor {
   @Input() authors: any;
+  authorsBoxes: any = {};
   result: number[] = [];
   touched: boolean = false;
 
-  writeValue(obj: any) {/* tslint:disable *//* tslint:enable */}
+  writeValue(obj: any) {
+    if (!obj) {
+      return;
+    }
+    obj.forEach((author: IAuthor) => {
+      this.authorsBoxes[author.id] = true;
+    });
+    this.onChange();
+  }
 
   registerOnTouched(fn: any) {/* tslint:disable *//* tslint:enable */}
 
@@ -36,14 +46,14 @@ export class AuthorsFieldComponent implements ControlValueAccessor {
     this.propagateChange = fn;
   }
 
-  onChange(id, status) {
+  onChange() {
     this.touched = true;
-    if (status) {
-      this.result.push(id);
-    } else {
-      const indexToDelete = this.result.findIndex((itemId: number) => itemId === id);
-      this.result.splice(indexToDelete, 1);
-    }
+    this.result = [];
+    Object.keys(this.authorsBoxes).forEach((key: string) => {
+      if (this.authorsBoxes[key]) {
+        this.result.push(+key);
+      }
+    });
     this.propagateChange(this.result);
   }
 

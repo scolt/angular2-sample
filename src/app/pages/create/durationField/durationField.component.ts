@@ -30,7 +30,12 @@ export class DurationFieldComponent implements ControlValueAccessor {
 
   constructor(private cd: ChangeDetectorRef) {}
 
-  writeValue(obj: any) {/* tslint:disable *//* tslint:enable */}
+  writeValue(obj: any) {
+    if (!obj) {
+      return;
+    }
+    this.date = obj;
+  }
 
   registerOnTouched(fn: any) {/* tslint:disable *//* tslint:enable */}
 

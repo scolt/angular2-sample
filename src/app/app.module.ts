@@ -51,6 +51,7 @@ import { CoursesService } from './pages/courses/courses.service';
 import { UserService } from './common/services/user.service';
 import { HttpService } from './common/services/http.service';
 import { LoaderService } from './common/components/loaderBlock/loaderBlock.service';
+import { BreadcrumbService } from './common/services/breadcrumb.service';
 
 import { DurationPipe } from './common/pipes/duration.pipe';
 import { OrderByPipe } from './common/pipes/orderBy.pipe';
@@ -118,6 +119,7 @@ type StoreType = {
     UserService,
     HttpService,
     LoaderService,
+    BreadcrumbService,
     FilterPipe,
     FormBuilder
   ]
