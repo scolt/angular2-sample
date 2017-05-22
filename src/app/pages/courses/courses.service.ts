@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
 import { ICourse } from './course/course.component';
 import { HttpService } from '../../common/services/http.service';
 import { URLSearchParams } from '@angular/http';
 import { Router } from '@angular/router';
+
+import { Store } from '@ngrx/store';
+import { GET_COURSES } from '../../common/reducers/course.reducer';
+import { GET_AUTHORS } from '../../common/reducers/author.reducer';
 
 export interface ICoursesListParams {
   page: number;
@@ -24,8 +27,6 @@ export interface ICoursesListResponse {
 
 @Injectable()
 export class CoursesService {
-  public courses: Subject<ICoursesListResponse> = new Subject<ICoursesListResponse>();
-  public authors: Subject<IAuthor[]> = new Subject<IAuthor[]>();
 
   private params: ICoursesListParams = {
     page: 1,
@@ -33,7 +34,9 @@ export class CoursesService {
     search: ''
   };
 
-  constructor(private router: Router, private http: HttpService) {}
+  constructor(private router: Router,
+              private http: HttpService,
+              private store: Store<any>) {}
 
   setPage(page: number) {
     this.params.page = page;
@@ -49,7 +52,10 @@ export class CoursesService {
   getAuthors() {
     this.http.get('/courses/authors')
       .map((res) => res.json())
-      .subscribe((result: IAuthor[]) => this.authors.next(result));
+      .subscribe((result: IAuthor[]) => this.store.dispatch({
+        type: GET_AUTHORS,
+        payload: result
+      }));
   }
 
   getList(params = null) {
@@ -74,7 +80,10 @@ export class CoursesService {
         return result;
       })
       .subscribe((result: ICoursesListResponse) => {
-        this.courses.next(result);
+        this.store.dispatch({
+          type: GET_COURSES,
+          payload: result
+        });
       });
   }
 
@@ -85,7 +94,6 @@ export class CoursesService {
   }
 
   save(course: ICourse) {
-    console.log(course);
     this.router.navigateByUrl('/');
   }
 
@@ -94,6 +102,6 @@ export class CoursesService {
     params.set('id', id);
     this.http.get('/courses/delete', {search: params})
       .map((result) => result.json())
-      .subscribe(this.getList.bind(this));
+      .subscribe(this.getList.bind(this, undefined));
   }
 }

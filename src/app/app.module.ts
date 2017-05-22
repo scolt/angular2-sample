@@ -5,6 +5,12 @@ import {
   NgModule,
   ApplicationRef
 } from '@angular/core';
+
+import { StoreModule } from '@ngrx/store';
+import authReducer from './common/reducers/auth.reducer';
+import courseReducer from './common/reducers/course.reducer';
+import authorReducer from './common/reducers/author.reducer';
+
 import {
   removeNgStyles,
   createNewHosts,
@@ -112,6 +118,11 @@ type StoreType = {
     ModalModule.forRoot(),
     VexModalModule,
     ReactiveFormsModule,
+    StoreModule.provideStore({
+      user: authReducer,
+      course: courseReducer,
+      author: authorReducer
+    }),
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

@@ -6,6 +6,10 @@ import {
 } from '@angular/core';
 
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import {
+  CourseModel
+} from '../../common/models/course.model';
 
 import { ICourse } from '../courses/course/course.component';
 import { CoursesService, IAuthor, ICoursesListResponse } from '../courses/courses.service';
@@ -29,6 +33,7 @@ export class CreateCoursesComponent implements OnInit, OnDestroy {
     public cs: CoursesService,
     public fb: FormBuilder,
     private cd: ChangeDetectorRef,
+    private store: Store<any>,
     private bs: BreadcrumbService,
     private route: ActivatedRoute) {
     this.createForm = fb.group({
@@ -42,28 +47,28 @@ export class CreateCoursesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscriptions.push(this.cs.authors.subscribe((result: IAuthor[]) => {
+    this.subscriptions.push(this.store.select('author').subscribe((result: IAuthor[]) => {
       this.authors = result;
       this.cd.markForCheck();
-    }));
-    this.subscriptions.push(this.cs.courses.subscribe((result: ICoursesListResponse) => {
-      const course: ICourse = result.courses[0];
-      Object.keys(course).forEach((key: string) => {
-        if (this.createForm.controls[key]) {
-          this.createForm.controls[key].patchValue(course[key]);
-        }
-      });
-      this.bs.push({
-        title: course.title,
-        path: ''
-      });
-      this.loading = false;
     }));
 
     this.route.params.subscribe((params: any) => {
       if (params.id === 'new') {
         this.loading = false;
       } else {
+        this.subscriptions.push(this.store.select('course').subscribe((result: CourseModel) => {
+          const course: ICourse = result.courses[0];
+          Object.keys(course).forEach((key: string) => {
+            if (this.createForm.controls[key]) {
+              this.createForm.controls[key].patchValue(course[key]);
+            }
+          });
+          this.bs.push({
+            title: course.title,
+            path: ''
+          });
+          this.loading = false;
+        }));
         this.cs.getItemById(params.id);
       }
     });

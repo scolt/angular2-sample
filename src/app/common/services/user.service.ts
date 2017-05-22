@@ -4,7 +4,8 @@ import { ICreds } from '../../pages/login/login.component';
 import { Router } from '@angular/router';
 import { Response } from '@angular/http';
 import { HttpService } from './http.service';
-
+import { Store } from '@ngrx/store';
+import { LOG_IN, LOG_OUT } from '../reducers/auth.reducer';
 const TOKEN_KEY_NAME = 'token';
 
 export interface IAuthenticatedResult {
@@ -32,14 +33,18 @@ export class UserService {
   public authenticatedResult: BehaviorSubject<IAuthenticatedResult> = new BehaviorSubject<IAuthenticatedResult>(successLogout);
   public userInfo: Subject<IUserInfo> = new Subject<IUserInfo>();
 
-  constructor(private router: Router, private http: HttpService) {
+  constructor(private router: Router,
+              private http: HttpService,
+              private store: Store<any>) {
     this.getProfile();
   }
 
   public getProfile(): Promise<any> {
     return this.http.post(`/auth/userinfo`, {}).toPromise().then((user: Response) => {
-      this.userInfo.next(user.json().name);
-      this.authenticatedResult.next(successLogin);
+      this.store.dispatch({
+        type: LOG_IN,
+        payload: user.json().name
+      });
     }, (error) => console.log(error.status, error.statusText));
   }
 
@@ -48,13 +53,14 @@ export class UserService {
       localStorage.setItem(TOKEN_KEY_NAME, item.json().token);
       this.getProfile();
       this.router.navigateByUrl('/courses');
-      this.authenticatedResult.next(successLogin);
     }, (error) => console.log(error.status, error.statusText));
   }
 
   public logout(): void {
     localStorage.removeItem(TOKEN_KEY_NAME);
+    this.store.dispatch({
+      type: LOG_OUT
+    });
     this.router.navigateByUrl('/');
-    this.authenticatedResult.next(successLogout);
   }
 }

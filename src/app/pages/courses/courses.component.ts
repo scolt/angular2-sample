@@ -7,9 +7,13 @@ import {
 } from '@angular/core';
 
 import { ICourse } from './course/course.component';
-import { CoursesService, ICoursesListResponse } from './courses.service';
+import { CoursesService } from './courses.service';
 import { ISubscription } from 'rxjs/Subscription';
 import { IPagingConfig } from './paging/paging.component';
+import { Store } from '@ngrx/store';
+import {
+  CourseModel
+} from '../../common/models/course.model';
 
 @Component({
   selector: 'courses',
@@ -26,7 +30,9 @@ export class CoursesComponent implements OnInit, OnDestroy {
   };
   private subscription: ISubscription;
 
-  constructor(public coursesService: CoursesService, private cd: ChangeDetectorRef) {
+  constructor(private store: Store<any>,
+              private coursesService: CoursesService,
+              private cd: ChangeDetectorRef) {
   }
 
   pageChanged(value: number) {
@@ -35,7 +41,7 @@ export class CoursesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this.coursesService.courses.subscribe((result: ICoursesListResponse) => {
+    this.subscription = this.store.select('course').subscribe((result: CourseModel) => {
       this.courses = result.courses;
       this.pagingConfig.totalPages = result.totalPages;
       this.cd.markForCheck();

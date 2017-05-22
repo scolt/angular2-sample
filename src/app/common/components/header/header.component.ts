@@ -5,8 +5,11 @@ import {
   OnDestroy
 } from '@angular/core';
 
-import { UserService, IAuthenticatedResult } from '../../services/user.service';
+import { UserService } from '../../services/user.service';
+import { UserModel } from '../../models/user.model';
 import { Router } from '@angular/router';
+
+import { Store } from '@ngrx/store';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,14 +22,15 @@ export class HeaderComponent implements OnDestroy {
   username: string = '';
   isLightUI: boolean = false;
 
-  constructor(public userService: UserService, private router: Router, private cd: ChangeDetectorRef) {
-    this.userService.authenticatedResult.subscribe((result: IAuthenticatedResult) => {
-      this.isAuthenticatedUser = result.result;
-      this.cd.markForCheck();
-    });
-
-    this.userService.userInfo.subscribe((result) => {
-      this.username = result.first + ' ' + result.last;
+  constructor(public userService: UserService,
+              private router: Router,
+              private store: Store<any>,
+              private cd: ChangeDetectorRef) {
+    this.store.select('user').subscribe((result: UserModel) => {
+      if (result.userProfile) {
+        this.username = result.userProfile.first + ' ' + result.userProfile.last;
+      }
+      this.isAuthenticatedUser = result.loggedIn;
       this.cd.markForCheck();
     });
 
